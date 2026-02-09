@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Service Mart | Professional Digital Agency</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #d1a412;
+      --dark: #000000;
+      --light: #ffffff;
+      --muted: #6f6f6f;
+      --bg: #000000;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+
+    img {
+      max-width: 100%;
+      display: block
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    /* ================= NAVBAR ================= */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--dark);
+    }
+
+    .nav {
+      width: 100%;
+      padding: 18px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 3px solid var(--primary);
+    }
+
+    .logo img {
+      height: 92px
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .menu a {
+      color: #eaeaea;
+      font-weight: 500;
+      font-size: 24px;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: var(--primary)
+    }
+
+    .inq-btn {
+      padding: 12px 28px;
+      background: var(--primary);
+      color: #000;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: 0.3s;
+    }
+
+    .inq-btn:hover {
+      background: #fff
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 30px;
+      color: var(--primary);
+      cursor: pointer
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      width: 100%;
+      min-height: 100vh;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.65)), url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner {
+      width: 100%;
+      padding: 0 80px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 4.8vw, 68px);
+      margin-bottom: 22px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: clamp(18px, 2vw, 22px);
+      color: #e0e0e0;
+      max-width: 620px;
+      margin-bottom: 36px;
+    }
+
+    .hero .cta {
+      padding: 16px 40px;
+      background: var(--primary);
+      color: #000;
+      font-weight: 600;
+      border-radius: 50px;
+      font-size: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 36px;
+      border-radius: 22px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .stat h3 {
+      font-size: 42px;
+      color: var(--primary);
+    }
+
+    .stat span {
+      font-size: 15px;
+      color: #ddd
+    }
+
+    /* ================= SECTIONS ================= */
+    section {
+      max-width: 1400px;
+      margin: auto;
+      padding: 110px 40px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .section-title h2 {
+      color: #d1a412;
+      font-size: clamp(32px, 4.2vw, 54px);
+      font-weight: 700;
+    }
+
+    .section-title p {
+      color: #fff;
+      max-width: 700px;
+      margin: 16px auto 0;
+      font-size: 18px
+    }
+
+    /* ================= SERVICES ================= */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+    }
+
+    .service {
+      background: #d1a412;
+      padding: 50px 40px;
+      border-radius: 26px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+      transition: 0.4s;
+    }
+
+    .service:hover {
+      transform: translateY(-14px)
+    }
+
+    .service h3 {
+      margin-bottom: 18px;
+      font-size: 26px
+    }
+
+    .service p {
+      color: #f8f8f8;
+      font-size: 17px
+    }
+
+    /* ================= PORTFOLIO ================= */
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 50px;
+    }
+
+    .work {
+      background: #fff;
+      border-radius: 26px;
+      overflow: hidden;
+      transition: 0.4s;
+    }
+
+    .work:hover {
+      transform: scale(1.05)
+    }
+
+    .work img {
+      height: 240px;
+      width: 410px;
+      object-fit: cover
+    }
+
+    .work-info {
+      padding: 30px;
+      text-align: center;
+      color: #000000;
+    }
+
+    .work-info h3 {
+      font-size: 22px
+    }
+
+    .work-info a {
+      display: inline-block;
+      margin-top: 14px;
+      color: #d1a412;
+      font-weight: 600
+    }
+
+    /* ================= INQUIRY FORM ================= */
+    .form-wrap {
+      max-width: 900px;
+      margin: auto
+    }
+
+    form {
+      background: #fff;
+      padding: 60px;
+      border-radius: 30px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      padding: 16px;
+      font-size: 16px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      width: 100%;
+    }
+
+    form textarea {
+      grid-column: 1/3;
+      resize: none;
+      height: 140px
+    }
+
+    form button {
+      grid-column: 1/3;
+      padding: 18px;
+      background: var(--primary);
+      border: none;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: var(--dark);
+      color: #cfcfcf;
+      text-align: center;
+      padding: 50px;
+      border-top: 3px solid var(--primary);
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media(max-width:1024px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 0 40px
+      }
+    }
+
+    @media(max-width:768px) {
+      .menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #000;
+        flex-direction: column;
+        width: 260px;
+        padding: 20px;
+        display: none
+      }
+
+      .menu.active {
+        display: flex
+      }
+
+      .menu-btn {
+        display: block
+      }
+
+      form {
+        grid-template-columns: 1fr
+      }
+
+      form textarea,
+      form button {
+        grid-column: 1
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="nav">
+      <div class="logo"><img src="image1.png" alt="Digital Service Mart"></div>
+      <nav class="menu" id="menu">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Work</a>
+        <a href="#contact" class="inq-btn">Inquiry</a>
+      </nav>
+      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <h1>We Build Digital Experiences That Drive Business Growth</h1>
+        <p>Digital Service Mart is a professional digital agency delivering high-impact websites, branding and
+          performance marketing solutions.</p>
+        <a href="#contact" class="cta">Start Your Project</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <h3>250+</h3><span>Projects Completed</span>
+        </div>
+        <div class="stat">
+          <h3>120+</h3><span>Clients Worldwide</span>
+        </div>
+        <div class="stat">
+          <h3>8+</h3><span>Years of Experience</span>
+        </div>
+        <div class="stat">
+          <h3>4.9★</h3><span>Client Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Comprehensive digital solutions tailored for scalable business growth.</p>
+    </div>
+
+    <div class="services">
+      <div class="service">
+        <h3>Digital Marketing</h3>
+        <p>Growth-focused marketing strategies designed to increase visibility, traffic and conversions.</p>
+      </div>
+      <div class="service">
+        <h3>Brand Promotion</h3>
+        <p>Professional branding solutions that establish trust and long-term recognition.</p>
+      </div>
+      <div class="service">
+        <h3>SEO & Analytics</h3>
+        <p>Advanced SEO audits, reporting and competitor analysis for higher rankings.</p>
+      </div>
+      <div class="service">
+        <h3>Google & Meta Ads</h3>
+        <p>ROI-driven paid advertising campaigns optimised for lead generation and sales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="section-title">
+      <h2>Featured Work</h2>
+      <p>Selected projects showcasing our design and development expertise.</p>
+    </div>
+
+    <div class="portfolio">
+      <div class="work"><img src="https://images.pexels.com/photos/29833130/pexels-photo-29833130.jpeg">
+        <div class="work-info">
+          <h3>Cafe Website</h3><a href="cafemain.html">View Project</a>
+        </div>
+      </div>
+      <div class="work"><img src="https://images.pexels.com/photos/2519218/pexels-photo-2519218.jpeg">
+        <div class="work-info">
+          <h3>E-Commerce Website</h3><a href="ecomain.html">View Project</a>
+        </div>
+      </div>
+      <div class="work"><img src="https://images.pexels.com/photos/16563661/pexels-photo-16563661.jpeg">
+        <div class="work-info">
+          <h3>Travel Website</h3><a href="tramain.html">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INQUIRY -->
+  <section id="contact">
+    <div class="section-title">
+      <h2>Start a Conversation</h2>
+      <p>Tell us about your project and we’ll get back to you within 24 hours.</p>
+    </div>
+
+    <div class="form-wrap">
+      <form action="https://formspree.io/f/xkovgqya" method="POST">
+
+        <input type="text" name="name" placeholder="Full Name" required>
+
+        <input type="email" name="email" placeholder="Email Address" required>
+
+        <input type="tel" name="phone" placeholder="Phone Number">
+
+        <input type="text" name="company" placeholder="Company Name">
+
+        <select name="service" required>
+          <option value="">Select Service</option>
+          <option>Website Development</option>
+          <option>Digital Marketing</option>
+          <option>SEO</option>
+          <option>Paid Advertising</option>
+          <option>Branding</option>
+        </select>
+
+        <select name="budget">
+          <option value="">Estimated Budget</option>
+          <option>₹25,000 – ₹50,000</option>
+          <option>₹50,000 – ₹1,00,000</option>
+          <option>₹1,00,000+</option>
+        </select>
+
+        <textarea name="message" placeholder="Tell us about your project"></textarea>
+
+        <button type="submit">Submit Inquiry</button>
+
+      </form>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Digital Service Mart. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+
+</body>
+
+</html>
